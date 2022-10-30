@@ -6,11 +6,11 @@ from game_play import GamePlay
 # init game
 game = Game()
 game_print = GamePrint(game)
-print("You are player #{}".format(game.you))
+print("You are player #{}".format(str(game.you) + ("*" if game.you == game.sheriff else "")))
 
 # first turn
 turn = 0
-print("current turn: {}".format(turn))
+print("Current turn: {}".format(turn))
 
 # init game play
 game_play = GamePlay(game, game_print)

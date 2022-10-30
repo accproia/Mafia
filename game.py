@@ -1,6 +1,12 @@
 import random
 
 class Game:
+
+    mafia = set()
+    civilians = set()
+    sheriff = 0
+    you = 0
+
     def get_random_civilian(self):
         return [i for i in range(1,11) if i not in self.mafia][random.randint(0, 6)]
 
