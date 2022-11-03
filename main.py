@@ -2,11 +2,13 @@ import random
 from game import Game
 from game_print import GamePrint
 from game_play import GamePlay
+from game_config import GameConfig
 
 # init game
 game = Game()
 game_print = GamePrint(game)
 game_print.print_your_info()
+game_config = GameConfig()
 
 # first turn
 turn = 0
