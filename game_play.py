@@ -82,7 +82,7 @@ class GamePlay:
         if player in self.game.mafia:
             self.maf_play_with_mates(play_with)
 
-        self.common_play_with_other(play_with)
+        self.common_play_with_other(player, play_with)
         
         self.exclude_unknow_play_with(player, play_with)
 
