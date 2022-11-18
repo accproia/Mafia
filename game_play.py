@@ -1,5 +1,5 @@
 from game import Game
-from game_print import GamePrint
+from game_print import GamePrint, Smiles
 import random
 
 # constants
@@ -198,7 +198,8 @@ class YourTurn(PlayerTurn):
         self.game_play.calc_speech_quality(self.player)
         
     def _get_button(self, idx:int) -> InlineButton:
-        return InlineButton( str(idx) + "\u2705" if idx in self.play_with else str(idx), str(idx) )
+        white_check_mark = Smiles.white_check_mark
+        return InlineButton( str(idx) + white_check_mark if idx in self.play_with else str(idx), str(idx) )
 
     def print(self) -> tuple[str, any]:
 

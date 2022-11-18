@@ -1,6 +1,9 @@
 from game import Game
 from game_config import GameConfig
 
+class Smiles:
+    white_check_mark = "\u2705" 
+
 class GamePrint:
 
     def __init__(self, game:Game) -> None:
