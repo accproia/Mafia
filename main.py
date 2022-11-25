@@ -77,7 +77,7 @@ def convert_buttons(buttons:list) -> list:
 def convert_buttonlists(buttonlists:list) -> list:
     return [convert_buttons(buttons_list) for buttons_list in buttonlists]
 
-def game_process(state: State) -> tuple[str, any]:
+def game_process(state: State):
     state.do()
     (text, buttons) = state.print()
 

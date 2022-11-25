@@ -28,7 +28,7 @@ class State:
     def do(self):
         pass
 
-    def print(self) -> tuple[str, any]:
+    def print(self):
         return ("", None)
     
     def get_next(self, action:Action):
@@ -138,7 +138,7 @@ class Beginning(State):
     def do(self):
         pass
 
-    def print(self) -> tuple[str, any]:
+    def print(self):
 
         text = self.game_print.print_your_info() + new_line_str
         text += self.game_print.print_current_cicle(self.game_play.turn)
@@ -186,7 +186,7 @@ class OthersTurn(PlayerTurn):
     def do(self):
         self.play_with = self.game_play.make_others_player_turn(self.player)
 
-    def print(self) -> tuple[str, any]:
+    def print(self):
         text = self.game_print.print_player_turn(self.player, self.play_with, self.game_play.speech_qualities[self.player])
         return (text, None)
     
@@ -201,7 +201,7 @@ class YourTurn(PlayerTurn):
         white_check_mark = Smiles.white_check_mark
         return InlineButton( str(idx) + white_check_mark if idx in self.play_with else str(idx), str(idx) )
 
-    def print(self) -> tuple[str, any]:
+    def print(self):
 
         text = self.game_print.print_player_turn(self.player, self.play_with, self.game_play.speech_qualities[self.player])
         buttons = [[self._get_button(i) for i in range(1, 6) if i != self.player],
@@ -230,7 +230,7 @@ class YourTurn(PlayerTurn):
 # return this to end the game
 class End(State):
 
-    def print(self) -> tuple[str, any]:
+    def print(self):
         
         text = self.game_print.print_mafia_players() + new_line_str
         text += self.game_print.print_civilians(show_sherif=True)
